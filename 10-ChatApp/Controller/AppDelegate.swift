@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         
         let db = Database.database().reference()
-        db.setValue("Hemos guardado datos en lube")
+        db.setValue("Hemos guardado datos en la nube")
         return true
     }
 
