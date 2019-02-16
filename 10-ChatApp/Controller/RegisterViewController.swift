@@ -7,9 +7,18 @@
 //
 
 import UIKit
+import Firebase
 
 class RegisterViewController: UIViewController {
 
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    
+    @IBOutlet weak var passwordConfirmTextField: UITextField!
+    
+   
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,6 +26,27 @@ class RegisterViewController: UIViewController {
     }
     
 
+    @IBAction func registerPressed(_ sender: UIButton) {
+        
+        guard passwordTextField.text == passwordConfirmTextField.text else {
+            return
+        }
+        
+        guard let email = emailTextField.text, let pass = passwordTextField.text  else {
+            return
+        }
+        
+       
+        Auth.auth().createUser(withEmail: email, password: pass) { (user, error) in
+            if error != nil{
+                print(error!)
+            } else {
+                print("El usuario ha sido creado")
+                self.performSegue(withIdentifier: "fromRegisterToChat", sender: self )
+            }
+        }
+
+    }
     /*
     // MARK: - Navigation
 

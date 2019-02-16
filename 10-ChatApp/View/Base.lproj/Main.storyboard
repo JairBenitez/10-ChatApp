@@ -280,6 +280,9 @@
                                         <state key="normal" title="Registrar">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="registerPressed:" destination="tSx-qe-BmO" eventType="touchUpInside" id="PmI-Mb-Fdr"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -298,6 +301,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Registrar cuenta" id="YJG-0X-VZs"/>
                     <connections>
+                        <outlet property="emailTextField" destination="8vI-Nf-OGE" id="g91-ne-Fl7"/>
+                        <outlet property="passwordConfirmTextField" destination="q6Y-mg-bSK" id="XRk-TQ-l2y"/>
+                        <outlet property="passwordTextField" destination="u8w-pC-7aP" id="gpK-pF-mDJ"/>
                         <segue destination="6CV-x8-sni" kind="show" identifier="fromRegisterToChat" id="k3j-0c-wHu"/>
                     </connections>
                 </viewController>
@@ -330,6 +336,6 @@
         <image name="movil" width="640" height="426"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="d90-ha-lGQ"/>
+        <segue reference="k3j-0c-wHu"/>
     </inferredMetricsTieBreakers>
 </document>
