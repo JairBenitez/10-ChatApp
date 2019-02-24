@@ -125,6 +125,9 @@
                                         <state key="normal" title="Ingresar">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="loginPressed:" destination="Lqq-Hq-xyB" eventType="touchUpInside" id="8HV-jt-pCk"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -144,6 +147,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Entrar ahora" id="k5o-4A-KFo"/>
                     <connections>
+                        <outlet property="emailTextField" destination="uMX-m0-Kgf" id="maT-iY-hNO"/>
+                        <outlet property="passwordTextField" destination="U7h-cy-VCs" id="lFP-CA-QAC"/>
                         <segue destination="6CV-x8-sni" kind="show" identifier="fromLoginToChat" id="D3t-2L-zM6"/>
                     </connections>
                 </viewController>
@@ -193,6 +198,9 @@
                                                 <state key="normal" title="Enviar">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="sendPressed:" destination="6CV-x8-sni" eventType="touchUpInside" id="NlY-ZB-rkC"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -223,12 +231,21 @@
                         <viewLayoutGuide key="safeArea" id="Phw-40-TgZ"/>
                     </view>
                     <navigationItem key="navigationItem" title="Chat" id="lPV-AA-9gL">
-                        <barButtonItem key="rightBarButtonItem" title="Salir" id="Ijz-w0-h0I"/>
+                        <barButtonItem key="rightBarButtonItem" title="Salir" id="Ijz-w0-h0I">
+                            <connections>
+                                <action selector="logoutPressed:" destination="6CV-x8-sni" id="LJG-8t-eCG"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="massageTextField" destination="oha-lY-dn1" id="SaA-Da-im2"/>
+                        <outlet property="messagesTableView" destination="9qr-qb-Ttr" id="EIa-jH-C8U"/>
+                        <outlet property="sendButton" destination="AUH-og-NW8" id="Sw2-bb-w0G"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N8O-Fy-pMy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3669.5999999999999" y="182.51231527093597"/>
+            <point key="canvasLocation" x="3646" y="183"/>
         </scene>
         <!--Registrar cuenta-->
         <scene sceneID="H2K-tg-zoP">
@@ -336,6 +353,6 @@
         <image name="movil" width="640" height="426"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="k3j-0c-wHu"/>
+        <segue reference="D3t-2L-zM6"/>
     </inferredMetricsTieBreakers>
 </document>
